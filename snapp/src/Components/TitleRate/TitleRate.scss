@@ -1,0 +1,38 @@
+.TitleRate {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+        text-align: right;
+        text-align: right;
+        margin-top: 13px;
+        font-size: 14px;
+        font-family: 'IranSans';
+        font-weight: 500;
+        margin-right: 10px;
+    }
+
+    &__rate {
+
+        &__rateContainer {
+            display: flex;
+            background-color: #E5F5EB;
+            padding: 3px;
+            border-radius: 4px;
+            margin-left: 10px;
+
+            &__icon {
+                width: 12px;
+                margin-right: 4px;
+                transform: translateY(-1px);
+            }
+
+            &__rateNum {
+                font-size: 12px;
+                color: #22A958;
+            }
+        }
+    }
+}
