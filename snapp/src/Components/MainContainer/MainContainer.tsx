@@ -12,12 +12,26 @@ const MainContainer = () => {
     }
     const [lat, setLat] = useState("")
     const [long, setLong] = useState("")
+    const [page,setPage] = useState(5)
     const [data, setData] = useState()
 
+    window.onscroll = function() {
+        var d = document.documentElement;
+        var offset = d.scrollTop + window.innerHeight;
+        var height = d.offsetHeight;
+      
+        if (offset >= height - 1) {
+          console.log('At the bottom');
+          console.log("before" + page)
+          setPage(page + 5)
+          console.log(page)
+          test()
+        }
+      };
 
     const test = () => {
         axios
-            .get(`https://snappfood.ir/mobile/v3/restaurant/vendors-list?extra-filter=&lat=${query.lat}4&long=${query.long}&page_size=${query.page_size}&page=${query.page}`)
+            .get(`https://snappfood.ir/mobile/v3/restaurant/vendors-list?extra-filter=&lat=${query.lat}4&long=${query.long}&page_size=${page}&page=${query.page}`)
             .then((response) => {
                 setData(response.data.data.finalResult)
             })
@@ -30,7 +44,7 @@ const MainContainer = () => {
     }
     useEffect(() => {
         test()
-    }, [])
+    }, [page])
     return (
         <div className='MainContainer'>
             <Container data={data} />

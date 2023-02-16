@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 .TitleRate__title {
   text-align: right;
@@ -12,6 +12,16 @@
   font-family: "IranSans";
   font-weight: 500;
   margin-right: 10px;
+}
+@media screen and (max-width: 768px) {
+  .TitleRate__title {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .TitleRate__title {
+    font-size: 8px;
+  }
 }
 .TitleRate__rate {
   display: flex;
@@ -29,13 +39,38 @@
   margin-right: 4px;
   transform: translateY(-1px);
 }
+@media screen and (max-width: 768px) {
+  .TitleRate__rate__rateContainer__icon {
+    width: 8px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .TitleRate__rate__rateContainer__icon {
+    width: 6px;
+  }
+}
 .TitleRate__rate__rateContainer__rateNum {
   font-size: 12px;
   color: #22A958;
+}
+@media screen and (max-width: 768px) {
+  .TitleRate__rate__rateContainer__rateNum {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .TitleRate__rate__rateContainer__rateNum {
+    font-size: 8px;
+  }
 }
 .TitleRate__rate__vote {
   font-size: 12px;
   margin-left: 7px;
   font-family: "IranSans";
   color: #a3a3a3;
+}
+@media screen and (max-width: 768px) {
+  .TitleRate__rate__vote {
+    font-size: 8px;
+  }
 }/*# sourceMappingURL=TitleRate.css.map */
