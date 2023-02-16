@@ -22,4 +22,36 @@
   font-family: "IranSans";
   font-weight: 500;
   margin-right: 10px;
+}
+.Container__description {
+  font-size: 11px;
+  text-align: right;
+  font-family: "IranSans";
+  margin-right: 10px;
+  margin-top: 6px;
+  color: #404040;
+}
+.Container__payment {
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: row-reverse;
+  font-family: "IranSans";
+}
+.Container__payment__type {
+  font-size: 12px;
+  color: #a3a3a3;
+}
+.Container__payment__price {
+  font-size: 12px;
+  color: #404040;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.Container__payment__price__currency {
+  margin-right: 2px;
+  font-size: 11px;
 }/*# sourceMappingURL=Container.css.map */

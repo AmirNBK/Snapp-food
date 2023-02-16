@@ -23,4 +23,42 @@
         font-weight: 500;
         margin-right: 10px;
     }
+
+    &__description {
+        font-size: 11px;
+        text-align: right;
+        font-family: 'IranSans';
+        margin-right: 10px;
+        margin-top: 6px;
+        color: #404040;
+    }
+
+    &__payment {
+        text-align: right;
+        margin-right: 10px;
+        margin-top: 6px;
+        display: flex;
+        flex-direction: row-reverse;
+        font-family: 'IranSans';
+
+        &__type {
+            font-size: 12px;
+            color: #a3a3a3;
+        }
+
+        &__price {
+            font-size: 12px;
+            color: #404040;
+            margin-right: 5px;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+
+            &__currency {
+                margin-right: 2px;
+                font-size: 11px;
+            }
+        }
+
+    }
 }

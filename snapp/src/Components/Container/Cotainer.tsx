@@ -7,18 +7,22 @@ import TitleRate from '../TitleRate/TitleRate.tsx'
 
 const Container = (props: { data: [] }) => {
     const data = props.data
-    // console.log(data)
 
     return (
         <div>
             {data?.slice(1).map((item, index) => {
-                console.log(item.data.rate)
 
                 return (
                     <div className='Container' key={index}>
                         <img className='Container__image' src={`${item.data?.backgroundImage}`} />
                         <div className='Container__icon'> <IconContainer logo={item.data?.defLogo} /> </div>
-                        <div> <TitleRate title={item.data.title} rate={item.data.rate}/> </div>
+                        <div> <TitleRate title={item.data.title} rate={item.data.rate} vote={item.data.voteCount} /> </div>
+                        <div className='Container__description'> {item.data.description.replaceAll(',', '')} </div>
+                        <div className='Container__payment'>
+                            <div className='Container__payment__type'> {item.data.isZFExpress ? "ارسال اکسپرس" : "پیک فروشنده"} </div>
+                            <div className='Container__payment__price'> {item.data.deliveryFee} <div className='Container__payment__price__currency'>
+                                تومان </div> </div>
+                        </div>
                     </div>
                 )
             })}
