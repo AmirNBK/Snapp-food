@@ -1,0 +1,15 @@
+.BlankPageContainer {
+
+    &__button {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        padding: 10px 40px;
+        border-radius: 30px;
+        border: none;
+        background-color: #F700A1;
+        color: #fff;
+        font-family: 'IranSans';
+    }
+}

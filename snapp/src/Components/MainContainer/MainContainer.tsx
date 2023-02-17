@@ -5,33 +5,39 @@ import Container from '../Container/Cotainer.tsx'
 
 const MainContainer = () => {
     const query = {
-        "page": 0,
-        "page_size": 5,
         "lat": 35.754,
         "long": 51.328
     }
-    const [lat, setLat] = useState("")
-    const [long, setLong] = useState("")
-    const [page,setPage] = useState(5)
+    const [pageSize, setPageSize] = useState(5)
+    const [page,setPage] = useState(0)
     const [data, setData] = useState()
 
-    window.onscroll = function() {
+    const [lat, setLat] = useState(0)
+    const [long, setLong] = useState(0)
+
+    const getPosition = (position) => {
+        setLat(position.coords.latitude)
+        setLong(position.coords.longitude)
+    }
+
+    window.navigator.geolocation
+        .getCurrentPosition(getPosition);
+
+    window.onscroll = function () {
         var d = document.documentElement;
         var offset = d.scrollTop + window.innerHeight;
         var height = d.offsetHeight;
-      
+
         if (offset >= height - 1) {
-          console.log('At the bottom');
-          console.log("before" + page)
-          setPage(page + 5)
-          console.log(page)
-          test()
+            setPageSize(pageSize + 5)
+            setPage(page + 1)
+            test()
         }
-      };
+    };
 
     const test = () => {
         axios
-            .get(`https://snappfood.ir/mobile/v3/restaurant/vendors-list?extra-filter=&lat=${query.lat}4&long=${query.long}&page_size=${page}&page=${query.page}`)
+            .get(`https://snappfood.ir/mobile/v3/restaurant/vendors-list?extra-filter=&lat=${query.lat}&long=${query.long}&page_size=${pageSize}&page=${page}`)
             .then((response) => {
                 setData(response.data.data.finalResult)
             })
@@ -42,9 +48,10 @@ const MainContainer = () => {
                 // always executed
             })
     }
+
     useEffect(() => {
         test()
-    }, [page])
+    }, [pageSize])
     return (
         <div className='MainContainer'>
             <Container data={data} />
