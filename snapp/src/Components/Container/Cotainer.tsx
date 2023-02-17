@@ -12,11 +12,11 @@ const Container = (props: { data: [] }) => {
     return (
         <div>
             {data?.slice(1).map((item, index) => {
-
                 return (
                     <Link to='/home' className='Link'>
                         <div className='Container' key={index}>
                             <img className='Container__image' src={`${item.data?.backgroundImage}`} />
+                            <div className='Container__bestCoupon'> {item.data?.best_coupon} </div>
                             <div className='Container__icon'> <IconContainer logo={item.data?.defLogo} /> </div>
                             <div> <TitleRate title={item.data.title} rate={item.data.rate} vote={item.data.voteCount} /> </div>
                             <div className='Container__description'> {item.data.description.replaceAll(',', '')} </div>

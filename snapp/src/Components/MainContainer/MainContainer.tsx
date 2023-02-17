@@ -9,7 +9,7 @@ const MainContainer = () => {
         "long": 51.328
     }
     const [pageSize, setPageSize] = useState(5)
-    const [page,setPage] = useState(0)
+    const [page, setPage] = useState(0)
     const [data, setData] = useState()
 
     const [lat, setLat] = useState(0)
@@ -30,7 +30,6 @@ const MainContainer = () => {
 
         if (offset >= height - 1) {
             setPageSize(pageSize + 5)
-            setPage(page + 1)
             test()
         }
     };
@@ -45,7 +44,7 @@ const MainContainer = () => {
 
             })
             .then(() => {
-                // always executed
+
             })
     }
 
@@ -54,6 +53,7 @@ const MainContainer = () => {
     }, [pageSize])
     return (
         <div className='MainContainer'>
+            <div className='openVendors'> {''} </div>
             <Container data={data} />
         </div>
     )

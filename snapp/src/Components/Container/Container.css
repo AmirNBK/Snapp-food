@@ -79,4 +79,33 @@
   .Container__payment__price__currency {
     font-size: 8px;
   }
+}
+.Container__bestCoupon {
+  position: absolute;
+  top: 8px;
+  color: #22a958;
+  right: 0px;
+  background: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-family: "IranSans";
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .Container__bestCoupon {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .Container__bestCoupon {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Container__bestCoupon {
+    font-size: 6px;
+    padding: 4px 5px;
+  }
 }/*# sourceMappingURL=Container.css.map */
