@@ -1,14 +1,12 @@
-import logo from './logo.svg';
+'use strict'
 import './App.css';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import MainContainer from './Components/MainContainer/MainContainer.tsx';
 import BlankPage from './Components/BlankPage/BlankPage.tsx';
 import { Provider } from "react-redux";
-import store from "./Redux/store";
-
+import store from "./Redux/store"
 function App() {
   return (
-    <Provider store={store}>
       <div className="App">
         <BrowserRouter>
           <Switch>
@@ -18,7 +16,6 @@ function App() {
           </Switch>
         </BrowserRouter>
       </div>
-    </Provider>
   );
 }
 

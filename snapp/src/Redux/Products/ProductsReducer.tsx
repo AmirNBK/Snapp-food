@@ -1,3 +1,4 @@
+'use strict'
 const initialState = {
     loading: false,
     products: [],

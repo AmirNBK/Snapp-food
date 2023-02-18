@@ -17,15 +17,16 @@ const fetchProductsFailure = (error) => {
         payload: error,
     };
 };
-export const fetchProducts = () => {
+export const fetchProducts = (query, pageSize, page) => {
     return (dispatch) => {
         dispatch(fetchProductsRequest());
-        axios.get("https://api.escuelajs.co/api/v1/products").then((response) => {
-            const products = response.data;
-            dispatch(fetchProductsSuccess(products))
-        }).catch(error => {
-            const errorMessage = error.message
-            dispatch(fetchProductsFailure(errorMessage))
-        })
+        axios.get(`https://snappfood.ir/mobile/v3/restaurant/vendors-list?extra-filter=&lat=${query.lat}&long=${query.long}&page_size=${pageSize}&page=${page}`)
+            .then((response) => {
+                const products = response.data.data.finalResult;
+                dispatch(fetchProductsSuccess(products))
+            }).catch(error => {
+                const errorMessage = error.message
+                dispatch(fetchProductsFailure(errorMessage))
+            })
     };
 };
